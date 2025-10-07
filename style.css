@@ -21,6 +21,7 @@ body {
   box-sizing: border-box;
   border: 1px solid #ccc;
   background-color: white;
+  transition: opacity 0.2s ease;
 }
 
 #resetBtn, #sizeBtn {

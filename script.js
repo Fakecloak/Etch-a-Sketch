@@ -14,23 +14,31 @@ function createGrid(size){
         square.classList.add("square");
         square.style.width=`${squareSize}px`;
         square.style.height=`${squareSize}px`;
+        square.style.opacity=0;
+
+        let hoverCount = 0;
 
 
-        //for hover effect
+        //if someone hovers 100 times, it caps at 10
         square.addEventListener('mouseenter',()=>{
-            square.style.backgroundColor = "red";
+            hoverCount = Math.min(hoverCount+1,10);
+
+            r= Math.floor(Math.random()*256)
+            g= Math.floor(Math.random()*256)
+            b= Math.floor(Math.random()*256)
+
+            square.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+            square.style.opacity = hoverCount * 0.1;
         });
         container.appendChild(square);
     }
 }
 
 resetBtn.addEventListener('click',()=>{
-    container.innerHTML='';
-        
+    container.innerHTML='';       
 });
 
 sizeBtn.addEventListener('click',()=>{
-   
     let input = prompt("enter the grid size in number");
     let size = parseInt(input);
 
@@ -38,8 +46,7 @@ sizeBtn.addEventListener('click',()=>{
         createGrid(size);
     } else {
         alert('please enter valid number btwn 1 to 100.');
-    }
-        
+    }        
 });
 
-createGrid(16);
+createGrid(16); //function call
