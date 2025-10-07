@@ -49,4 +49,4 @@ sizeBtn.addEventListener('click',()=>{
     }        
 });
 
-createGrid(16); //function call
+// createGrid(16);
