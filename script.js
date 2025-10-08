@@ -18,7 +18,6 @@ function createGrid(size){
 
         let hoverCount = 0;
 
-
         //if someone hovers 100 times, it caps at 10
         square.addEventListener('mouseenter',()=>{
             hoverCount = Math.min(hoverCount+1,10);
@@ -34,10 +33,12 @@ function createGrid(size){
     }
 }
 
+// reset btn func()
 resetBtn.addEventListener('click',()=>{
     container.innerHTML='';       
 });
 
+// set grid func()
 sizeBtn.addEventListener('click',()=>{
     let input = prompt("enter the grid size in number");
     let size = parseInt(input);
